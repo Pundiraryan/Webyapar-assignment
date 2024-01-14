@@ -16,7 +16,6 @@ const userShema = mongoose.Schema({
                 type: String,
                 required:true
             },
-        
             email: {
                 type: String,
                 required:true
@@ -57,54 +56,3 @@ const userShema = mongoose.Schema({
         });
         const userModel = mongoose.model("users", userShema);
         module.exports=userModel;
-// const Sequelize = require("sequelize");
-// const Connection = require("../database/database");
-
-
-
-
-// const User = Connection.define("user", {
-//     profilePictureUrl:{
-//         type: String,
-//         // required:true
-//     },
-//     username: {
-//         type: String,
-//         required:true
-//     },
-//     name: {
-//         type: String,
-//         required:true
-//     },
-//     lastName: {
-//         type: String,
-//         required:true
-//     },
-
-//     email: {
-//         type: String,
-//         required:true
-//         // primaryKey: true
-//     },
-//     password: {
-//         type: String,
-//         required:true
-//     },
-    
-//     accountType:{
-//         type: String,
-//         required:true
-//     },
-//     group:{//this is classroom
-//         type: String,
-//         required:true,
-//         defaultValue: ""
-//     }
-// })
-
-
-
-// User.sync({force:false})
-
-// module.exports = User;
-

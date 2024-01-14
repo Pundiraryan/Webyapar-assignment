@@ -23,8 +23,6 @@ app.use(express.json());
 app.use(session({
     secret: process.env.SECRET,
     cookie: { maxAge: maxAge },
-    // resave:false
-
 }))
 //Routes
 
