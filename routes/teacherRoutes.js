@@ -30,7 +30,7 @@ Router.get("/home/teacher/write_notice", middleware, writeNotice)
 
 Router.post("/home/teacher/save_notice", middleware, saveNotice)
 
-Router.post('/home/teacher/task/upload', middleware, upload.single('formFile'), submitTask)
+Router.post('/home/teacher/class/upload', middleware, upload.single('formFile'), submitTask)
 
 
 //tasks routes

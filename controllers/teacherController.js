@@ -4,6 +4,7 @@ const userModel=require('../models/userModel');
 const noticeModel=require('../models/noticeModel');
 const taskModel=require('../models/taskModel');
 const submissionModel=require('../models/submisssionModel');
+const slugify=require('slugify');
 
 const getHome=(req, res) => {
     res.render("teacher/index", {
@@ -63,7 +64,7 @@ const saveNotice = async (req, res) => {
 
 const submitTask= async (req, res) => {
 
-    const { title, task, mark, receiver, ext, deadline } = req.body;
+    const { title, formFile, mark, receiver, ext, deadline } = req.body;
     const { email } = req.session.user;
     let url = 'empty';
 
@@ -79,7 +80,7 @@ const submitTask= async (req, res) => {
             const result=taskModel.create({
                 title: title,
                 receiver: receiver,
-                task: task,
+                assignment: formFile,
                 fileUrl: url,
                 mark: mark,
                 deadline: deadline,
