@@ -4,6 +4,11 @@ const session = require("express-session");
 const dotenv = require('dotenv');
 const maxAge = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 
+const userRouter=require('./routes/userRoutes');
+const studentRouter=require('./routes/studentRoutes');
+const teacherRouter=require('./routes/teacherRoutes');
+const adminRouter=require('./routes/adminRoutes');
+
 
 const app = express();
 dotenv.config();
@@ -22,10 +27,6 @@ app.use(session({
 
 }))
 //Routes
-const userRouter=require('./routes/userRoutes');
-const studentRouter=require('./routes/studentRoutes');
-const teacherRouter=require('./routes/teacherRoutes');
-const adminRouter=require('./routes/adminRoutes');
 
 app.use("/", userRouter);
 app.use("/", studentRouter);
